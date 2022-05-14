@@ -1,0 +1,43 @@
+local MainToggle = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ToggleBtn = Instance.new("ImageButton")
+
+MainToggle.Name = "MainToggle"
+MainToggle.Parent = game.CoreGui
+MainToggle.ResetOnSpawn = false
+
+Frame.Parent = MainToggle
+Frame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+Frame.BackgroundTransparency = 0.200
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0109622413, 0, 0.0136186769, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
+
+UICorner.Parent = Frame
+
+ToggleBtn.Name = "ToggleBtn"
+ToggleBtn.Parent = Frame
+ToggleBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleBtn.BackgroundTransparency = 1.000
+ToggleBtn.Size = UDim2.new(1, 0, 1, 0)
+ToggleBtn.Image = "rbxassetid://9575312053"
+ToggleBtn.MouseButton1Down:connect(function()
+  kavo:ToggleUI()
+end)
+
+local function TJTYGU_fake_script()
+    local script = Instance.new('LocalScript', ToggleBtn)
+
+    function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+    counter = 0
+
+    while wait(0.1)do
+        script.Parent.ImageColor3 = Color3.fromHSV(zigzag(counter),1,1)
+
+        counter = counter + 0.01
+    end
+end
+coroutine.wrap(TJTYGU_fake_script)()
