@@ -252,7 +252,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 
 
-game.Workspace.Gravity = 0.000000000000000001
+game.Workspace.Gravity = 0.00000000000000000000000000000000000000000000000000000000000000000000001
     else
 game.StarterGui:SetCore("SendNotification", {
     Title = "Gravity";
