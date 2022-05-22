@@ -1,0 +1,167 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "load";
+    Text = "Loading Gui"; -- what the text says (ofc)
+    Duration = 60;
+})
+wait(2)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Welcome"; 
+    Text = "Welcome To MaxUi X Prison Life v1"; -- what the text says (ofc)
+    Duration = 60;
+})
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))() 
+local Window = Library.CreateLib("MaxUi X Prison Life v1", "BloodTheme")
+
+local Tab1 = Window:NewTab("Credits")
+local Tab2 = Window:NewTab("Script")
+local Tab3 = Window:NewTab("Admin Commands")
+
+local Tab1Section = Tab1:NewSection("Made By Maxlaser")
+local Tab1Section = Tab1:NewSection("Youtube : MaxlaserTech")
+local Tab1Section = Tab1:NewSection("Discord : Maxlaser#5336")
+local Tab1Section = Tab1:NewSection("Ui Lilbray : Kavo Ui")
+local Tab1Section = Tab1:NewSection("No Update is first gui")
+local Tab2Section = Tab2:NewSection("Item/Gun")
+local Tab3Section = Tab3:NewSection("Admin")
+
+Tab2Section:NewButton("Give all item", "Give You All Item", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver.M9.ITEMPICKUP)
+			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single.Hammer.ITEMPICKUP)
+			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+end)
+
+Tab2Section:NewButton("AK-47", "local script", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+end)
+Tab2Section:NewButton("M9", "local script", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver.M9.ITEMPICKUP)
+end)
+Tab2Section:NewButton("Remington 870", "local script", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+end)
+Tab2Section:NewButton("Hammer", "local script", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single.Hammer.ITEMPICKUP)
+end)
+Tab2Section:NewButton("KeyCard(work somestimes)", "Works", function()
+local Remote = game.Workspace.Remote['ItemHandler']
+ 
+local Arguments = {
+        [1] = Workspace.Prison_ITEMS.single:WaitForChild("Key card").ITEMPICKUP
+}
+end)
+Tab2Section:NewButton("RGB Guns(not work)","Rgb Gun", function()
+   print("heheh")  local c = 1 function zigzag(X)  return math.acos(math.cos(X * math.pi)) / math.pi end game:GetService("RunService").RenderStepped:Connect(function()  if game.Workspace.Camera:FindFirstChild('Arms') then   for i,v in pairs(game.Workspace.Camera.Arms:GetDescendants()) do    if v.ClassName == 'MeshPart' then      v.Color = Color3.fromHSV(zigzag(c),1,1)     c = c + .0001    end   end  end end)
+end)
+Tab2Section:NewButton("Spread", "Decreases Your Spread!", function()
+			while wait() do
+				local Remington = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
+				local Pistol = require(game.Players.LocalPlayer.Backpack.M9.GunStates)
+				local AK = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
+				Remington["Spread"] = 0
+				Pistol["Spread"] = 0
+				AK["Spread"] = 0
+			end
+		end)
+local Tab2Section = Tab2:NewSection("Combat")
+Tab2Section:NewButton("Killaura(Auto Kill No Want Gun)","On KILLAURa Prison Life", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/APt6LQYe"))()
+end)
+Tab2Section:NewButton("Auto Fire + infinite ammo + fast fire + inf Damage + Fire Rate", "Works", function()
+workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+			workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver.M9.ITEMPICKUP)
+	workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP)
+
+
+local weapon = require(game.Players.LocalPlayer.Backpack["Remington 870"].GunStates)
+
+weapon["FireRate"] = 0.00000000000000000001
+weapon["AutoFire"] = ture
+weapon["Range"] = math.huge
+weapon["MaxAmmo"] = math.huge
+weapon["CurrentAmmo"] = math.huge
+weapon["StoredAmmo"] = math.huge
+weapon["Bullets"] = 7
+weapon["Damage"] = 10
+
+
+local weapon = require(game.Players.LocalPlayer.Backpack["M9"].GunStates)
+
+weapon["FireRate"] = 0.00000000000000000001
+weapon["AutoFire"] = ture
+weapon["Range"] = math.huge
+weapon["MaxAmmo"] = math.huge
+weapon["CurrentAmmo"] = math.huge
+weapon["StoredAmmo"] = math.huge
+weapon["Bullets"] = 7
+weapon["Damage"] = 10
+
+
+local weapon = require(game.Players.LocalPlayer.Backpack["AK-47"].GunStates)
+
+weapon["FireRate"] = 0.00000000000000000001
+weapon["AutoFire"] = ture
+weapon["Range"] = math.huge
+weapon["MaxAmmo"] = math.huge
+weapon["CurrentAmmo"] = math.huge
+weapon["StoredAmmo"] = math.huge
+weapon["Bullets"] = 7
+weapon["Damage"] = 10
+
+
+end)
+
+local Tab2Section = Tab2:NewSection("Other")
+Tab2Section:NewButton("Remove All Door", "Works", function()
+for i,d in pairs(game.Workspace.Doors:GetChildren()) do
+				if d.ClassName == "Model" then
+					d:Destroy()
+				end
+			end
+		end)
+Tab3Section:NewButton("Admin", "Works", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/tZvQ5Vah"))()
+end)
+Tab2Section:NewButton("Fly", "Make U Fly", function()
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+end)
+Tab2Section:NewButton("Fly Car", "Make U Fly Car", function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/VLBwAgwT'),true))()
+end)
+Tab2Section:NewButton("HitBox Gui", "Load Hitbox Gui", function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/VLBwAgwT'),true))()
+end)
+local Tab2Section = Tab2:NewSection("Teleports")
+Tab2Section:NewButton("Outside of prison", "Tp You outside of the prison!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(451.6684265136719, 98.0399169921875, 2216.338134765625)
+            end)
+Tab2Section:NewButton("Prison Yard", "Tp You to the Prison Yard", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(736.4671630859375, 97.99992370605469, 2517.583740234375)
+            end)
+Tab2Section:NewButton("Kitchen", "Tp You to the Kitchen!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
+            end)
+Tab2Section:NewButton("Prison Cells", "Tp You to the Prison Cells!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
+            end)
+Tab2Section:NewButton("Surveilance Room", "Teleports You to the Surveilance Room!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(795.251953125, 99.98998260498047, 2327.720703125)
+            end)
+Tab2Section:NewButton("Break Room", "Tp You to the Break Room!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(800.0896606445312, 99.98998260498047, 2266.71630859375)
+            end)
+Tab2Section:NewButton("Police Armory", "Tp You to the Police Armory!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(837.2889404296875, 99.98998260498047, 2270.99658203125)
+            end)
+Tab2Section:NewButton("Police Room", "Tp you to the Police Room", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(836.5386352539062, 99.98998260498047, 2320.604248046875)
+            end)
+Tab2Section:NewButton("Cafeteria", "Teleports you to the Cafeteria!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.994873046875, 99.98993682861328, 2325.73095703125)
+            end)
+            TeleportsSection:NewButton("Criminal Base Inside", "Teleports you to the Criminal Base Inside!", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-975.8451538085938, 109.32379150390625, 2053.11376953125)
+    end)
